@@ -1,0 +1,11 @@
+F:\SSD\ProjetoAulaYuri\bin\Debug\ProjetoAulaYuri.exe.config
+F:\SSD\ProjetoAulaYuri\bin\Debug\ProjetoAulaYuri.exe
+F:\SSD\ProjetoAulaYuri\bin\Debug\ProjetoAulaYuri.pdb
+F:\SSD\ProjetoAulaYuri\obj\Debug\ProjetoAulaYuri.csprojAssemblyReference.cache
+F:\SSD\ProjetoAulaYuri\obj\Debug\ProjetoAulaYuri.Form1.resources
+F:\SSD\ProjetoAulaYuri\obj\Debug\ProjetoAulaYuri.Properties.Resources.resources
+F:\SSD\ProjetoAulaYuri\obj\Debug\ProjetoAulaYuri.csproj.GenerateResource.cache
+F:\SSD\ProjetoAulaYuri\obj\Debug\ProjetoAulaYuri.csproj.CoreCompileInputs.cache
+F:\SSD\ProjetoAulaYuri\obj\Debug\ProjetoAulaYuri.exe
+F:\SSD\ProjetoAulaYuri\obj\Debug\ProjetoAulaYuri.pdb
+F:\SSD\ProjetoAulaYuri\obj\Debug\ProjetoAulaYuri.Form2.resources
