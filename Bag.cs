@@ -14,10 +14,10 @@ namespace ProjetoAulaYuri
 
     public class Itens
     {
-        public string Nome { get; set; }
-        public string Descrição { get; set; }
-        public string Tipo { get; set; }
-        public string Rank { get; set; }
-        public string Raridade { get; set; }
+        public virtual string Nome { get; set; }
+        public virtual string Descrição { get; set; }
+        public virtual string Tipo { get; set; }
+        public virtual string Rank { get; set; }
+        public virtual string Raridade { get; set; }
     }
 }

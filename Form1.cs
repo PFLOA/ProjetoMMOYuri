@@ -53,24 +53,29 @@ namespace ProjetoAulaYuri
                 Tipo = "Low Range"
             });
 
-            personagem1 = new Personagem("IceDemon", "Mago");
+            personagem1 = new Guerreiro("IceDemon");
             personagem1.Bag = new Bag
             {
                 Tamanho = 28,
                 Itens = itensP1
             };
 
-            personagem2 = new Personagem("GeneralIce", "Guerreiro");
-            personagem3 = new Personagem("Baltazar", "Arqueiro");
+            personagem2 = new Guerreiro("GeneralIce");
+            personagem3 = new Mago("Baltazar");
+            var status = personagem3.Status;
         }
 
         private void btnPersonagem1Atacar_Click(object sender, EventArgs e)
         {
             if (form2 == null)
             {
+                ItensAtaque itens = new ItensAtaque();
+                itens.Ataque = 50; //value
+
                 form2 = new Form2(personagem1);
-                form2.Show();
             }
+
+            form2.Show();
         }
     }
 }
