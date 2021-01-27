@@ -20,4 +20,9 @@ namespace ProjetoAulaYuri
         public virtual string Rank { get; set; }
         public virtual string Raridade { get; set; }
     }
+
+    public class ArmaPrincipal : Itens
+    {
+        public int Dano { get; set; }
+    }
 }

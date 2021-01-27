@@ -12,9 +12,10 @@ namespace ProjetoAulaYuri
 {
     public partial class Form1 : Form
     {
-        private Personagem personagem1;
-        private Personagem personagem2;
-        private Personagem personagem3;
+        private Personagem guerreiro = null;
+        private Personagem necromante;
+        private Mago mago;
+
         private Form2 form2;
 
         public Form1()
@@ -53,16 +54,26 @@ namespace ProjetoAulaYuri
                 Tipo = "Low Range"
             });
 
-            personagem1 = new Guerreiro("IceDemon");
-            personagem1.Bag = new Bag
+            guerreiro = new Guerreiro("GeneralIce")
             {
-                Tamanho = 28,
-                Itens = itensP1
+                Bag = new Bag
+                {
+                    Tamanho = 28,
+                    Itens = itensP1
+                },
+                Gear = new Gears
+                {
+                    ArmaPrincipal = new ArmaPrincipal
+                    {
+                        Dano = 5,
+                        Descrição = "Muito dano !",
+                        Nome = "Albatroz",
+                        Rank = "2",
+                        Raridade = "Raro",
+                        Tipo = "Range"
+                    }
+                },
             };
-
-            personagem2 = new Guerreiro("GeneralIce");
-            personagem3 = new Mago("Baltazar");
-            var status = personagem3.Status;
         }
 
         private void btnPersonagem1Atacar_Click(object sender, EventArgs e)
@@ -72,8 +83,11 @@ namespace ProjetoAulaYuri
                 ItensAtaque itens = new ItensAtaque();
                 itens.Ataque = 50; //value
 
-                form2 = new Form2(personagem1);
+                form2 = new Form2(guerreiro);
             }
+
+            FormLuta formLuta = new FormLuta(guerreiro);
+            formLuta.Show();
 
             form2.Show();
         }

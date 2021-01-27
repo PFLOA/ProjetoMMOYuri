@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace ProjetoAulaYuri
 {
+
+
+    /// <summary>
+    /// Status Personagens
+    /// </summary>
     public class Status
     {
-        private int _regeneração; 
+        private int _regeneração;
         private int _str;
+        private int _inteligencia;
 
         public int Regeneração
         {
@@ -22,6 +28,7 @@ namespace ProjetoAulaYuri
                 _regeneração = value;
             }
         }
+
         public int Strength
         {
             get
@@ -33,6 +40,24 @@ namespace ProjetoAulaYuri
                 _str = value;
             }
         }
+
+        /// <summary>
+        /// Força de Vontade.
+        /// </summary>
         public int WillPower { get; set; }
+
+        public int Inteligencia
+        {
+            get
+            {
+                return _inteligencia;
+            }
+            set
+            {
+                _inteligencia = value;
+            }
+        }
+
     }
+
 }

@@ -9,3 +9,15 @@ F:\SSD\ProjetoAulaYuri\obj\Debug\ProjetoAulaYuri.csproj.CoreCompileInputs.cache
 F:\SSD\ProjetoAulaYuri\obj\Debug\ProjetoAulaYuri.exe
 F:\SSD\ProjetoAulaYuri\obj\Debug\ProjetoAulaYuri.pdb
 F:\SSD\ProjetoAulaYuri\obj\Debug\ProjetoAulaYuri.Form2.resources
+F:\Downloads\ProjetoMMOYuri-main\bin\Debug\ProjetoAulaYuri.exe.config
+F:\Downloads\ProjetoMMOYuri-main\bin\Debug\ProjetoAulaYuri.exe
+F:\Downloads\ProjetoMMOYuri-main\bin\Debug\ProjetoAulaYuri.pdb
+F:\Downloads\ProjetoMMOYuri-main\obj\Debug\ProjetoAulaYuri.csprojAssemblyReference.cache
+F:\Downloads\ProjetoMMOYuri-main\obj\Debug\ProjetoAulaYuri.Form1.resources
+F:\Downloads\ProjetoMMOYuri-main\obj\Debug\ProjetoAulaYuri.Form2.resources
+F:\Downloads\ProjetoMMOYuri-main\obj\Debug\ProjetoAulaYuri.Properties.Resources.resources
+F:\Downloads\ProjetoMMOYuri-main\obj\Debug\ProjetoAulaYuri.csproj.GenerateResource.cache
+F:\Downloads\ProjetoMMOYuri-main\obj\Debug\ProjetoAulaYuri.csproj.CoreCompileInputs.cache
+F:\Downloads\ProjetoMMOYuri-main\obj\Debug\ProjetoAulaYuri.exe
+F:\Downloads\ProjetoMMOYuri-main\obj\Debug\ProjetoAulaYuri.pdb
+F:\Downloads\ProjetoMMOYuri-main\obj\Debug\ProjetoAulaYuri.FormLuta.resources
