@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProjetoAulaYuri.Itens;
 
-namespace ProjetoAulaYuri
+namespace ProjetoAulaYuri.Personagens
 {
     /// <summary>
     /// Classe publica Personagem.
@@ -39,20 +40,17 @@ namespace ProjetoAulaYuri
         {
             get
             {
+                if (Level == 1)
+                {
+                    _hp = 1000;
+                    return _hp;
+                }
+
                 return _hp;
             }
             set
             {
-                var consumiveis = value;
-
-                int totais = consumiveis;
-
-                int maxHp = 1000;
-
-                if (_hp < maxHp)
-                {
-                    _hp += totais;
-                }
+                _hp = value;
             }
         }
         public Gears Gear
@@ -127,6 +125,7 @@ namespace ProjetoAulaYuri
                     base.Status.WillPower = 12;
                     base.Status.Regeneração = 1;
                     base.Status.Inteligencia = 8;
+                    base.Status.Resistencia = 8;
                 }
 
                 return base.Status;

@@ -1,45 +1,93 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjetoAulaYuri.Personagens;
+using ProjetoAulaYuri.Bosses;
+using System.ComponentModel;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace ProjetoAulaYuri
 {
     public partial class FormLuta : Form
     {
         private Personagem guerreiro;
+        private Boss Orc;
+        BackgroundWorker worker = null;
+
 
         public FormLuta(Personagem guerreiro)
         {
             InitializeComponent();
 
+            Orc = new Boss();
+            Orc.HealtPoint = 550;
+
             this.guerreiro = guerreiro;
 
-            label7.Text = "200 / 200";
+            hpBossLabel.Text = $"{Orc.HealtPoint } / {Orc.HealtPoint }";
+            hpGuerreiroLabel.Text = $"{guerreiro.HealthPoint} / {guerreiro.HealthPoint}";
 
-            progressBar1.Maximum = guerreiro.HealthPoint;
-            progressBar1.Value = guerreiro.HealthPoint;
+            hpGuerreiroBar.Maximum = guerreiro.HealthPoint;
+            hpGuerreiroBar.Value = guerreiro.HealthPoint;
+
+            hpBossBar.Maximum = Orc.HealtPoint;
+            hpBossBar.Value = Orc.HealtPoint;
+        }
+
+        public void IniciarBackGroundWorker()
+        {
+            worker = new BackgroundWorker();
+            worker.DoWork += Worker_DoWork;
+            worker.RunWorkerCompleted += Worker_RunWorkerCompleted;
+
+            worker.RunWorkerAsync();
+        }
+        private void Worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            var dano = Orc.Atacar();
+            e.Result = dano;
+        }
+        private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            var dano = Convert.ToInt32(e.Result);
+            guerreiroDanoRecebidoLabel.Text = $"Dano Recebido {dano}";
+
+            if (dano < hpGuerreiroBar.Value)
+            {
+                hpGuerreiroBar.Value -= dano;
+            }
+            else
+            {
+                hpGuerreiroBar.Value = 0;
+            }
+
+            hpGuerreiroLabel.Text = $"{hpGuerreiroBar.Value} / {guerreiro.HealthPoint}";
+
+            Thread.Sleep(1000);
+
+            button1.Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             var dano = guerreiro.Atacar();
+            bossDanoRecebidoLabel.Text = $"Dano Recebido {dano}";
 
-            if (dano < progressBar2.Value)
+            if (dano < hpBossBar.Value)
             {
-                progressBar2.Value -= dano;
+                hpBossBar.Value -= dano;
             }
             else
             {
-                progressBar2.Value = 0;
+                hpBossBar.Value = 0;
             }
 
-            label7.Text = $"{progressBar2.Value} / 200";
+            hpBossLabel.Text = $"{hpBossBar.Value} / {Orc.HealtPoint}";
+            button1.Enabled = false;
+
+            Thread.Sleep(1000);
+
+            IniciarBackGroundWorker();
         }
     }
 }

@@ -1,20 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjetoAulaYuri.Personagens;
+using ProjetoAulaYuri.Itens;
 
 namespace ProjetoAulaYuri
 {
     public partial class Form1 : Form
     {
         private Personagem guerreiro = null;
-        private Personagem necromante;
-        private Mago mago;
 
         private Form2 form2;
 
@@ -25,29 +19,29 @@ namespace ProjetoAulaYuri
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            List<Itens> itensP1 = new List<Itens>();
+            List<Item> ItemP1 = new List<Item>();
 
-            itensP1.Add(new Itens() { 
+            ItemP1.Add(new Item() { 
                     Nome = "Espada Valorian",
                     Raridade = "Raro",
                     Tipo = "Low Range"
             });
 
-            itensP1.Add(new Itens()
+            ItemP1.Add(new Item()
             {
                 Nome = "Espada Valorian",
                 Raridade = "Raro",
                 Tipo = "Low Range"
             });
 
-            itensP1.Add(new Itens()
+            ItemP1.Add(new Item()
             {
                 Nome = "Espada Valorian",
                 Raridade = "Raro",
                 Tipo = "Low Range"
             });
 
-            itensP1.Add(new Itens()
+            ItemP1.Add(new Item()
             {
                 Nome = "Espada Valorian",
                 Raridade = "Raro",
@@ -59,7 +53,7 @@ namespace ProjetoAulaYuri
                 Bag = new Bag
                 {
                     Tamanho = 28,
-                    Itens = itensP1
+                    Itens = ItemP1
                 },
                 Gear = new Gears
                 {
@@ -80,8 +74,8 @@ namespace ProjetoAulaYuri
         {
             if (form2 == null)
             {
-                ItensAtaque itens = new ItensAtaque();
-                itens.Ataque = 50; //value
+                ItemAtaque Item = new ItemAtaque();
+                Item.Ataque = 50; //value
 
                 form2 = new Form2(guerreiro);
             }
