@@ -1,0 +1,76 @@
+﻿<Window x:Class="ProjetoAulaYuriWpf.Views.PerfilViews.Perfil"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetoAulaYuriWpf.Views.PerfilViews"
+        mc:Ignorable="d"
+        Title="Perfil" Height="553.612" Width="800" WindowStyle="None" ResizeMode="NoResize"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown" Background="Gray" Opacity="0.8">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="153*"/>
+            <ColumnDefinition Width="247*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Background="Chocolate" Opacity="0.5" Grid.ColumnSpan="2">
+            <Label Content="Perfil do Jogador" VerticalAlignment="Center" DockPanel.Dock="Left"
+                   FontFamily="Segoe UI Black" FontSize="25" FontWeight="Light"/>
+            <Button x:Name="btnFecharJanela" DockPanel.Dock="Right" Width="50" Click="btnFecharJanela_Click">
+                <Image Source="https://cdn4.iconfinder.com/data/icons/witchcraft-icons/200/magic_exit_door-512.png"/>
+            </Button>
+        </DockPanel>
+
+        <StackPanel Orientation="Vertical" Margin="20 0" Grid.Row="2" Grid.ColumnSpan="2">
+            <Label Content="Nome Jogador" VerticalAlignment="Center" 
+                   FontSize="18" Background="{x:Null}" FontWeight="SemiBold"/>
+            <Label Content="{Binding Nome, Mode=OneTime}" FontSize="20" Foreground="White"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="20 0" Grid.Row="3" Grid.ColumnSpan="2">
+            <Label Content="Classe Avatar" VerticalAlignment="Center" 
+                   FontSize="18" FontWeight="SemiBold"/>
+            <Label Content="{Binding ClassePersonagem, Mode=OneTime}"
+                   FontSize="20" Foreground="White"/>
+        </StackPanel>
+
+        <Grid Grid.Row="2" Grid.Column="1" Grid.RowSpan="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                <Image Source="{Binding Status.imgInteligencia}" Margin="10 0"/>
+                <Label FontSize="20" Foreground="White" FontWeight="SemiBold"
+                       VerticalAlignment="Center" Content="{Binding Status.Inteligencia}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <Image Source="{Binding Status.imgRegen}" Margin="10 0"/>
+                <Label FontSize="20" Foreground="White" FontWeight="SemiBold"
+                       VerticalAlignment="Center" Content="{Binding Status.Regeneração}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="2">
+                <Image Source="{Binding Status.imgStr}" Margin="10 0"/>
+                <Label FontSize="20" Foreground="White" FontWeight="SemiBold"
+                       VerticalAlignment="Center" Content="{Binding Status.Strength}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="3">
+                <Image Source="{Binding Status.imgWillpower}" Margin="10 0"/>
+                <Label FontSize="20" Foreground="White" FontWeight="SemiBold"
+                       VerticalAlignment="Center" Content="{Binding Status.WillPower}"/>
+            </StackPanel>
+        </Grid>
+        
+    </Grid>
+</Window>
